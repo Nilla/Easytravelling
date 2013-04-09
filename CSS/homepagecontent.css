@@ -30,8 +30,9 @@
 	display: block;
 	width:300px;
 	height:200px;
-	background-color:deepskyblue;
-	visibility:visible;  	
+	background-color:#0072bc;
+	visibility:visible;  
+    border-radius:5px;	
 }
 #details ul{
     list-style: none;
@@ -61,11 +62,17 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-bottom: 8px solid deepskyblue;
+    border-bottom: 8px solid #0072bc;
 }
 #product_content_box {
-background-color:#283891;
+background-color:#002157;
 height:400px;
 width:1024px;
 margin:auto;
+border-radius:5px;
+box-shadow: 0 1px 1px #777;
+}
+#searchpad {
+margin-top:10px;
+margin-bottom:100px;
 }

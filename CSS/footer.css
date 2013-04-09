@@ -31,9 +31,8 @@
 	margin-right: 30px;
 	}
 #footer {
-	background-image: url(..\images\footer-use.png);
-	height: 279px;
-	width: 769px;
+	background-image: url(http://localhost:1717/images/footer.png);
+
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	color: #FFF;
@@ -57,5 +56,5 @@
 }
 #copyright{
 	margin-left: 200px;
-	padding-top: 5px;
+	
 	}

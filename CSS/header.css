@@ -27,9 +27,14 @@ position: relative;
 font-family:'Arial Unicode MS';
 font-size:20px;
 padding:5px;
+color:#002157;
 	}
 #headermenubar li a{
-	color:#283891;
+	color:#568cb3;
 	font-weight:bold;
 	text-decoration:none;	
 	}
+#login {
+    float:right;
+
+}
