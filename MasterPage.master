@@ -11,11 +11,6 @@
     <link href="CSS/homepagecontent.css" rel="stylesheet" type="text/css"/>
     <link href="CSS/footer.css" rel="stylesheet" type="text/css"/>
     <link href="CSS/content.css" rel="stylesheet" type="text/css"/>
-    <style type="text/css">
-        .auto-style1 {
-            height: 278px;
-        }
-    </style>
 
 </head>
 <body>

@@ -70,7 +70,7 @@
 
 #product_content_box {
 background-color:#002157;
-height:1024px;
+height:400px;
 width:1024px;
 margin:auto;
 border-radius:5px;
@@ -80,49 +80,3 @@ box-shadow: 0 1px 1px #777;
 margin-top:10px;
 margin-bottom:100px;
 }
-
-
-  .ui-tabs-vertical { width: 55em; 
-                     
-                       
-
-  }
-  .ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; 
-                                   float: left; width: 12em; 
-                                   background-color:#002157;
-                                   list-style: none; 
-                                   color:white; 
-                                   margin-right:10px;
-                                   margin-top:30px;
-  }
-  .ui-tabs-vertical .ui-tabs-nav li { 
-      display:inline-block;
-      padding:10px;
-      position: relative;
-      font-size:20px;
-      clear: left; 
-      width: 100%; 
-      margin: 0 -1px .2em 0; 
-
-  }
-  .ui-tabs-vertical .ui-tabs-nav li a {  
-	font-weight:bold;
-	text-decoration:none;
-    display:inline-block;
-    color:white;
-
-  }
-  .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { 
-       
-      padding:10px; 
-      background-color:#002157;
-
-
-  }
-  .ui-tabs-vertical .ui-tabs-panel { 
-      padding: 1em; 
-      float: right; 
-      width: 40em; 
-      background-color:white;
-      margin-top:30px;
-  }
