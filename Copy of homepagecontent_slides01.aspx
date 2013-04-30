@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="homepagecontent.aspx.cs" Inherits="webpages_content" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="MasterPage.master" AutoEventWireup="true" CodeFile="Copy of homepagecontent_slides01.aspx.cs" Inherits="webpages_content" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
@@ -17,18 +17,52 @@
         });
     </script>
    
-    <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
-<script src="js/jquery.easing.1.2.js" type="text/javascript"></script>
-<script src="js/jquery.slideviewer.1.2.js" type="text/javascript"></script>
+<script type="text/javascript" src="slide_js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="slide_js/jquery-easing-1.3.pack.js"></script>
+<script type="text/javascript" src="slide_js/jquery-easing-compatibility.1.2.pack.js"></script>
+<script type="text/javascript" src="slide_js/coda-slider.1.1.1.pack.js"></script>
+
+     <script type="text/javascript" src="slide_js/try.js"></script>
 <script type="text/javascript">
-    $(window).bind("load", function () {
-        $("div#mygalone").slideView({
-            easeFunc: "easeInOutSine",
-            easeTime: 500,
-     
-            ttOpacity: 0.5,
-            toolTip: false
+    var theInt = null;
+    var $crosslink, $navthumb;
+    var curclicked = 0;
+
+    theInterval = function (cur) {
+        clearInterval(theInt);
+
+        if (typeof cur != 'undefined')
+            curclicked = cur;
+
+        $crosslink.removeClass("active-thumb");
+        $navthumb.eq(curclicked).parent().addClass("active-thumb");
+        $(".stripNav ul li a").eq(curclicked).trigger('click');
+
+        theInt = setInterval(function () {
+            $crosslink.removeClass("active-thumb");
+            $navthumb.eq(curclicked).parent().addClass("active-thumb");
+            $(".stripNav ul li a").eq(curclicked).trigger('click');
+            curclicked++;
+            if (6 == curclicked)
+                curclicked = 0;
+
+        }, 3000);
+    };
+    $(function () {
+
+        $("#main-photo-slider").codaSlider();
+
+        $navthumb = $(".nav-thumb");
+        $crosslink = $(".cross-link");
+
+        $navthumb
+        .click(function () {
+            var $this = $(this);
+            theInterval($this.parent().attr('href').slice(1) - 1);
+            return false;
         });
+
+        theInterval();
     });
 </script>
 </asp:Content>
@@ -121,17 +155,61 @@
         </div>
 
         <div id="product_box3">
-             <div id="mygalone" class="svw">
-        <ul>
-        <li><img alt="abc defrg thysu ooip jkifbtg fff"  src="slide_images/tempphoto-1.jpg" /></li>
-        <li><img alt="abc defrg thysu ooip jkifbtg fff"  src="slide_images/tempphoto-2.jpg" /></li>     
-        <li><img alt="abc defrg thysu ooip jkifbtg fff"  src="slide_images/tempphoto-3.jpg" /></li>
-        <li><img alt="abc defrg thysu ooip jkifbtg fff"  src="slide_images/tempphoto-4.jpg" /></li>
-        <!-- eccetera -->
-        <li><img alt="abc defrg thysu ooip jkifbtg fff"  src="slide_images/tempphoto-5.jpg" /></li>
-        </ul>
-</div>  
-       
+             
+            <div id="page-wrap">
+											
+	       <div class="slider-wrap">
+		   <div id="main-photo-slider" class="csw">
+			<div class="panelContainer">
+
+				<div class="panel" title="Panel 1">
+					<div class="wrapper">
+						<img src="slide_images/tempphoto-1.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							Photo Credit: <a href="http://flickr.com/photos/astrolondon/2396265240/">Kaustav Bhattacharya</a><br />
+							<span>"Free Tibet" Protest at the Olympic Torch Rally</span>
+						</div>
+					</div>
+				</div>
+				<div class="panel" title="Panel 2">
+					<div class="wrapper">
+						<img src="slide_images/tempphoto-2.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							Chicago Bears at Seattle Seahawks<br />
+							<span>Fifth field goal, overtime win for the Seahawks</span>
+						</div>
+					</div>
+				</div>		
+				<div class="panel" title="Panel 3">
+					<div class="wrapper">
+						
+						<img src="slide_images/scotch-egg.jpg" alt="scotch egg" class="floatLeft"/>
+						
+						<h1>How to Cook a Scotch Egg</h1>
+						
+						<ul>
+							<li>6 hard-boiled eggs, well chilled (i try to cook them to just past soft boiled stage, then stick them in the coldest part of the fridge to firm up)</li>
+							<li>1 pound good quality sausage meat (i used ground turkey meat, seasoned with sage, white pepper, salt and a tiny bit of maple syrup)</li>
+							<li>1/2 cup AP flour</li>
+							<li>1-2 eggs, beaten</li>
+							<li>3/4 cup panko-style bread crumbs</li>
+							<li>Vegetable oil for frying</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a href="#1" class="cross-link active-thumb"><img src="slide_images/tempphoto-1thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a>
+		<div id="movers-row">
+			<div><a href="#2" class="cross-link"><img src="slide_images/tempphoto-2thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+			<div><a href="#3" class="cross-link"><img src="slide_images/tempphoto-3thumb.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+			
+		</div>
+
+	</div>
+	
+	</div>
         </div>
         </div>
     </form>
